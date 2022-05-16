@@ -35,14 +35,16 @@ class Ticket {
         this.items = items
         this.orderTime = orderTime
         this.customerId = customerId
+        this.status = 'queued'
     }
 
     updateStatus = (newSatus) => {
-
+        this.status = newSatus
+        console.log(`The order for customer ${this.costumerId} is now ${this.status}`)
     }
 }
 
-Ticket.statusProperty = 'queued'
+
 
 /*
     Create a new instance of your class.
@@ -56,7 +58,7 @@ Ticket.statusProperty = 'queued'
 */
 
 //CODE HERE
-
+let firstTicket = new Ticket(['pizza', 'bread', 'soda'], '7:03 PM',575)
 
 /*
     Call the `updateStatus` method on
@@ -65,3 +67,5 @@ Ticket.statusProperty = 'queued'
 */
 
 //CODE HERE
+firstTicket.updateStatus('cooking')
+console.log(firstTicket)
